@@ -10,3 +10,11 @@ add this into your config/config.php:
 ```
 'theme' => 'cesnet',
 ```
+
+You may need to copy the following directories to the owncloud root directory,
+as they doesn't seem to be picked by ownCloud from inside a theme:
+
+```
+cesnet/core/ajax
+cesnet/lib
+```
