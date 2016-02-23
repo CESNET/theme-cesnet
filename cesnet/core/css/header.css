@@ -1,0 +1,37 @@
+#header .cesnet-logo {
+	background-image: url(../img/logo-du.svg);
+	background-repeat: no-repeat;
+	background-size: 214px auto;
+	background-position: center;
+	width: 214px;
+	height: 94px;
+	margin: 0 auto;
+}
+
+#header .logo-icon {
+	display: inline-block;
+	background-image: url("../img/logo-icon.svg");
+	background-repeat: no-repeat;
+	background-size: 34px auto;
+	width: 34px;
+	height: 34px;
+}
+
+#header .header-appname-container {
+	left: 50px;
+}
+
+#header .elixir-logo {
+	background-image: url(../img/logo-owncloud4elixir.cesnet.cz.svg);
+	background-repeat: no-repeat;
+	background-size: auto;
+	background-position: center;
+	width: 214px;
+	height: 100px;
+	margin: 0 auto;
+
+}
+
+#body-login #header {
+	padding-top : 10px;
+}
