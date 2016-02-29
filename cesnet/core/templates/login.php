@@ -31,7 +31,7 @@ script('core', [
 </form>
 <div class="legal-notice">
 	<p class="info"><?php p($l->t('By logging in you agree with the ')); ?>
-	<a href="https://du.cesnet.cz/cs/provozni_pravidla/start"><?php p($l->t('terms of use')); ?></a>
+	<a href="<?php p($l->t('https://du.cesnet.cz/en/provozni_pravidla/start')); ?>" ><?php p($l->t('terms of use')); ?></a>
 	</p>
 </div>
 <?php }

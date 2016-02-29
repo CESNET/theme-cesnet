@@ -18,6 +18,10 @@ class OC_Theme {
 		return 'ownCloud@CESNET';
 	}
 	
+	public function getBaseUrl() {
+		return 'https://owncloud.cesnet.cz';
+	}
+
 	public function getEntity() {
 		return 'ownCloud@CESNET';
 	}
