@@ -1,0 +1,6 @@
+{ "translations": {
+	"You can configure, which notifications you wish to receive, on the website under your 'Personal' settings." : "Pokud si přejete změnit nastavení notifikací, přejděte na web do osobního nastavení Vašeho účtu.",
+	"we are sending you a summary of recent activities on your account:" : "zasíláme Vám přehled nedávných změn na Vašem účtu:",
+	"Your CESNET Storage Department Team" : "Váš tým Datových uložišť CESNET"
+},"pluralForm" :"nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;"
+}
