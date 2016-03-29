@@ -1,11 +1,21 @@
 owncloud-theme
 ==============
 
-This theme is supposed to work with modded *user_saml* which
-you can find [here](https://github.com/CESNET/owncloud-apps).
+This ownCloud theme used by CESNET is supposed to work together
+with the *user_shib* app, which can be found [here](https://github.com/mirekys/user_shib).
 
-To enable this theme, add this to your config/config.php:
+To enable this theme, put the *cesnet* folder into your *owncloud/themes/* directory and
+add this into your config/config.php:
 
 ```
 'theme' => 'cesnet',
+```
+
+You may need to copy the following directories to the owncloud root directory,
+as they doesn't seem to be picked by ownCloud from inside a theme:
+
+```
+cesnet/apps/files_pdfviewer
+cesnet/core/ajax
+cesnet/lib
 ```

@@ -12,15 +12,22 @@ class OC_Theme {
 	function __construct() {
 		$this->ThemeName = 'cesnet';
 		$this->l = OC_L10N::get('core');
-//		OCP\Util::writeLog('t', 'translator:'. var_export($this->l, TRUE), OCP\Util::WARN);
+	}
+
+	public function getName() {
+		return 'ownCloud@CESNET';
 	}
 	
-	public function getDefaultEntity() {
+	public function getBaseUrl() {
+		return 'https://owncloud.cesnet.cz';
+	}
+
+	public function getEntity() {
 		return 'ownCloud@CESNET';
 	}
 
 	public function getSlogan() {
-		return $this->l->t("This service is a part of CESNET E-infrastructure\nhttp://www.cesnet.cz/services/?lang=en");
+		return $this->l->t("This service is a part of CESNET <a href=\"http://www.cesnet.cz/services/?lang=en\">e-infrastructure</a>");
 	}
 	
 	public function getShortFooter() {

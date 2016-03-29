@@ -1,54 +1,63 @@
 <!DOCTYPE html>
-<!--[if lt IE 7]><html class="ng-csp ie ie6 lte9 lte8 lte7"><![endif]-->
-<!--[if IE 7]><html class="ng-csp ie ie7 lte9 lte8 lte7"><![endif]-->
-<!--[if IE 8]><html class="ng-csp ie ie8 lte9 lte8"><![endif]-->
-<!--[if IE 9]><html class="ng-csp ie ie9 lte9"><![endif]-->
-<!--[if gt IE 9]><html class="ng-csp ie"><![endif]-->
-<!--[if !IE]><!--><html class="ng-csp"><!--<![endif]-->
-
+<!--[if lte IE 8]><html class="ng-csp ie ie8 lte9 lte8" data-placeholder-focus="false" lang="<?php p($_['language']); ?>" ><![endif]-->
+<!--[if IE 9]><html class="ng-csp ie ie9 lte9" data-placeholder-focus="false" lang="<?php p($_['language']); ?>" ><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html class="ng-csp" data-placeholder-focus="false" lang="<?php p($_['language']); ?>" ><!--<![endif]-->
 	<head data-requesttoken="<?php p($_['requesttoken']); ?>">
+		<meta charset="utf-8">
 		<title>
 		<?php p($theme->getTitle()); ?>
 		</title>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<meta name="apple-itunes-app" content="app-id=543672169">
-		<link rel="shortcut icon" href="<?php print_unescaped(image_path('', 'favicon.png')); ?>" />
-		<link rel="apple-touch-icon-precomposed" href="<?php print_unescaped(image_path('', 'favicon-touch.png')); ?>" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="referrer" content="never">
+		<meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+		<meta name="apple-itunes-app" content="app-id=<?php p($theme->getiTunesAppId()); ?>">
+		<meta name="theme-color" content="<?php p($theme->getMailHeaderColor()); ?>">
+		<link rel="shortcut icon" type="image/png" href="<?php print_unescaped(image_path('', 'favicon.png')); ?>">
+		<link rel="apple-touch-icon-precomposed" href="<?php print_unescaped(image_path('', 'favicon-touch.png')); ?>">
 		<?php foreach($_['cssfiles'] as $cssfile): ?>
-			<link rel="stylesheet" href="<?php print_unescaped($cssfile); ?>" type="text/css" media="screen" />
+			<link rel="stylesheet" href="<?php print_unescaped($cssfile); ?>" media="screen">
 		<?php endforeach; ?>
-		<!--[if !IE 7]><style type="text/css">#wrapper {display:table;height:100%}</style><![endif]-->
 		<?php foreach($_['jsfiles'] as $jsfile): ?>
-			<script type="text/javascript" src="<?php print_unescaped($jsfile); ?>"></script>
+			<script src="<?php print_unescaped($jsfile); ?>"></script>
 		<?php endforeach; ?>
-
-		<?php foreach($_['headers'] as $header): ?>
-			<?php
-				print_unescaped('<'.$header['tag'].' ');
-				foreach($header['attributes'] as $name=>$value) {
-					print_unescaped("$name='$value' ");
-				};
-				print_unescaped('/>');
-			?>
-		<?php endforeach; ?>
+		<?php print_unescaped($_['headers']); ?>
 	</head>
+	<body id="<?php p($_['bodyid']);?>">
+		<div class="wrapper">
+			<div class="v-align">
+				<?php if ($_['bodyid'] === 'body-login' ): ?>
+					<header role="banner">
+						<div id="header">
+							<div class="logo svg">
+								<h1 class="hidden-visually">
+									<?php p($theme->getName()); ?></h1>
+							</div>
 
-	<body id="body-login">
-		<div class="wrapper"><!-- for sticky footer -->
-			<header><div id="header">
-				<img src="<?php print_unescaped(image_path('', 'logo.svg')); ?>" class="svg" alt="<?php p($theme->getName()); ?>" />
-				<div id="logo-claim" style="display:none;"><?php p($theme->getLogoClaim()); ?></div>
-			</div></header>
+<?php
+if ( strcmp($_SERVER["SERVER_NAME"], "owncloud4elixir.cesnet.cz") !== 0 ) {
+?>
+							<div class="cesnet-logo">
+<?php
+} else {
+?>
+							<div class="elixir-logo">
+<?php
+}
+//							<div class="cesnet-logo">
+?>
 
-			<?php print_unescaped($_['content']); ?>
-
-		<!-- No blank div for dirty sticky footer <div class="cpush"></div>--><!-- for sticky footer -->
+								<h1 class="hidden-visually">
+									<?php p($theme->getName()); ?></h1>
+							</div>
+							<div id="logo-claim" style="display:none;"><?php p($theme->getLogoClaim()); ?></div>
+						</div>
+					</header>
+				<?php endif; ?>
+				<?php print_unescaped($_['content']); ?>
+				<div class="push"></div><!-- for sticky footer -->
+			</div>
 		</div>
-
-		<footer class="cfooter">
-			<a href="http://du.cesnet.cz"><img id="cesnet-logo"
-				src="<?php p(image_path('core','cesnet-logo-bile.png'));?>" alt="Datová úložiště CESNET"/></a>
+		<footer role="contentinfo">
 			<p class="info">
 				<?php print_unescaped($theme->getLongFooter()); ?>
 			</p>
