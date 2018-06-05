@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<info>
+	<id>theme-cesnet</id>
+	<name>ownCloud@CESNET Theme</name>
+	<description>This is a theme used by the ownCloud@CESNET instance.</description>
+	<licence>AGPL</licence>
+	<author>Miroslav Bauer</author>
+	<version>1.0.0</version>
+	<types>
+		<theme/>
+	</types>
+	<dependencies>
+		<owncloud min-version="10.0" max-version="10.0" />
+	</dependencies>
+	<namespace>Theme</namespace>
+</info>
