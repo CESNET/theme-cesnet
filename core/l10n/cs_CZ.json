@@ -1,0 +1,13 @@
+{ "translations": {
+	"CESNET a. l. e." : "CESNET, z. s. p. o.",
+	"This service is a part of CESNET <a href=\"http://www.cesnet.cz/services/?lang=en\">e-infrastructure</a>" : "Tato služba je součástí <a href=\"http://www.cesnet.cz/services/?lang=cs\">e-infrastruktury</a> CESNET",
+	"EduID Federated Login" : "Přihlášení přes eduID",
+	"Log in" : "Přihlásit se účtem v eduID",
+	"By logging in you agree with the " : "Přihlášením souhlasíte s ",
+	"terms of use" : "provozními pravidly",
+	"Your CESNET Storage Department Team" : "Váš tým Datových uložišť CESNET",
+	"Hello,<br><br>we inform you that %s shared <strong>%s</strong> with you.<br><a href=\"%s\">View file</a><br><br>" : "Dobrý den,<br><br>dovolujeme si Vás informovat o tom, že %s Vám právě nasdílel <strong>%s</strong>.<br><a href=\"%s\">Zobrazit soubor</a><br><br>",
+	"Hello,\n\nwe inform you that %s shared %s with you.\nView file here: %s\n\n" : "Dobrý den,\n\ndovolujeme si Vás informovat o tom, že %s Vám právě nasdílel %s.\nZobrazit soubor: %s\n\n",
+	"https://du.cesnet.cz/en/provozni_pravidla/start" : "https://du.cesnet.cz/cs/provozni_pravidla/start"
+},"pluralForm" :"nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;"
+}

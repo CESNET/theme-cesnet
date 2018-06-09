@@ -14,15 +14,11 @@ class OC_Theme {
 
 	function __construct() {
 		$this->ThemeName = 'cesnet';
-		$this->l = OC_L10N::get('core');
+		$this->l = \OC::$server->getL10N('core');
 		$this->lang = explode('_', $this->l->getLanguageCode())[0];
 		if (!in_array($this->lang, array('cs', 'en'))) {
 			$this->lang = 'en';
 		}
-	}
-
-	public function getName() {
-		return 'ownCloud@CESNET';
 	}
 
 	/**
@@ -102,7 +98,7 @@ class OC_Theme {
 	 * @return string entity name
 	 */
 	public function getEntity() {
-		return 'CESNET, z. s. p. o.';
+		return $this->l->t('CESNET a. l. e.');
 	}
 
 	/**
@@ -145,8 +141,8 @@ class OC_Theme {
 
 	public function buildDocLinkToKey($key) {
 		switch ($key) {
-			case 'user-sharing-federated' :
-				if ($this->lc === 'cs') {
+			case 'user-sharing-federated' : {
+				if ($this->lang === 'cs') {
 					$key='sdileni_souboru';
 				} else {
 					$key='how_to_share_your_files';
@@ -162,7 +158,7 @@ class OC_Theme {
 	 * @return string
 	 */
 	public function getMailHeaderColor() {
-		return '##0068A2';
+		return '#0068A2';
 	}
 
 }
