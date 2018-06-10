@@ -25,6 +25,12 @@
 	background-color: #a70057;
 }
 
+.dotted-overlay {
+	background-image: url(../img/logo-ascii.svg);
+	z-index: 0;
+	display: block;
+	opacity: 0.5;
+}
 /* log in screen background color */
 /* gradient of the header color and a brighter shade */
 /* can also be a flat color or an image */
@@ -71,6 +77,10 @@ button.primary:focus,
 .primary:disabled:hover, input[type="submit"].primary:disabled:hover, input[type="button"].primary:disabled:hover, button.primary:disabled:hover, .button.primary:disabled:hover,
 .primary:disabled:focus, input[type="submit"].primary:disabled:focus, input[type="button"].primary:disabled:focus, button.primary:disabled:focus, .button.primary:disabled:focus {
 	background-color: #745bca;
+}
+
+li.error > h1 {
+	text-align: center;
 }
 
 #legal-notice > p.info {

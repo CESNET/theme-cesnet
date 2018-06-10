@@ -12,7 +12,7 @@
 					<td width="20px">&nbsp;</td>
 					<td style="font-weight:normal; font-size:0.8em; line-height:1.2em; font-family:verdana,'arial',sans;">
 						<?php
-                                                print_unescaped($l->t('Hello,<br><br>your ownCloud account at Data Storage CESNET has been succesfully created.<br><br>Below are listed details about your account.<br><br>Your username: %s<br>Server address: <a href="%s">%s</a><br><a href=\"https://du.cesnet.cz/en/navody/owncloud/start\">User manual</a><br><br>If you have any questions or problems, feel free to contact us at support@cesnet.cz.<br><br>',
+                                                print_unescaped($l->t('Hello,<br><br>your ownCloud account at Data Storage CESNET has been succesfully created.<br><br>Below are listed details about your account.<br><br>Your username: %s<br>Server address: <a href="%s">%s</a><br><a href="https://du.cesnet.cz/en/navody/owncloud/start">User manual</a><br><br>If you have any questions or problems, feel free to contact us at support@cesnet.cz.<br><br>',
 							array($_['username'], $_['url'], $_['url'])));
 
 						// TRANSLATORS term at the end of a mail
