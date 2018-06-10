@@ -1,8 +1,0 @@
-{ "translations": {
-	"This service is a part of CESNET <a href=\"http://www.cesnet.cz/services/?lang=en\">e-infrastructure</a>" : "Tato služba je součástí <a href=\"http://www.cesnet.cz/services/?lang=cs\">e-infrastruktury</a> CESNET",
-	"EduID Federated Login" : "Přihlášení přes eduID",
-	"Log-in with your eduID account" : "Přihlaste se svým eduID účtem",
-	"By logging in you agree with the " : "Přihlášením souhlasíte s ",
-	"terms of use" : "provozními pravidly"
-},"pluralForm" :"nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;"
-}

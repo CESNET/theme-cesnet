@@ -25,11 +25,38 @@
 	background-color: #a70057;
 }
 
-.dotted-overlay {
-	background-image: url(../img/logo-ascii.svg);
-	z-index: 0;
+#alternative-logins li {
+	width: 280px;
+	margin: 5px;
+}
+
+#alternative-logins a.button {
+	line-height: 25px;
+	width: 257px;
+}
+
+#legal-notice p.info {
+	width: 100%;
+}
+
+#body-login #header {
+	padding-top: 50px;
+}
+
+#body-login a.button {
 	display: block;
-	opacity: 0.5;
+	margin: 0px;
+}
+
+#body-login .wrapper {
+	background-image: url(../img/wrapper-bg.svg);
+	background-position: -100px -100px:
+	background-repeat: repeat-y;
+	background-size: 350px auto;
+	z-index: 0;
+	padding-left: 25px;
+	padding-right: 25px;
+	display: block;
 }
 /* log in screen background color */
 /* gradient of the header color and a brighter shade */
@@ -88,6 +115,12 @@ li.error > h1 {
 }
 
 /* use logos from theme */
+#header .elixir-logo {
+	background-image: url('../img/logo-elixir.svg');
+	background-size: 250px auto;
+	width: 250px;
+	height: 150px;
+}
 #header .logo {
 	background-image: url('../img/logo-du.svg');
 	background-size: 250px auto;

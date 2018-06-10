@@ -7,6 +7,7 @@
 	"terms of use" : "provozními pravidly",
 	"Access forbidden" : "Přístup zamítnut",
 	"Your CESNET Storage Department Team" : "Váš tým Datových uložišť CESNET",
+	"Return to login page" : "Návrat na úvodní stránku",
 	"To use ownCloud service it is required to have valid affiliation (employee, student) with one of the membership organization that are fulfilling the Access Policy (AP) for the CESNET Large Infrastructure." : "Pro využívání služby ownCloud je nezbytné být zaměstnancem nebo studentem některé z členských organizací, které zároveň splňují Zásady pro přístup do Velké infrastruktury CESNET (Access Policy, AP)",
 	"Based of those requirements, our services cannot be used by, e.g. former employees, graduates or library readers. If you have been denied access but you consider yourself to be eligible to use our services, please feel free to contact us at " : "Z těchto důvodů nemohou našich služeb využívat např. bývalí zaměstnanci, absolventi, případně čtenáři knihoven. Domníváte-li se, že byste měli mít k našim službám přístup, ale byl Vám systémem odepřen, kontaktujte nás na adrese ",
 	"Hello,<br><br>we inform you that %s shared <strong>%s</strong> with you.<br><a href=\"%s\">View file</a><br><br>" : "Dobrý den,<br><br>dovolujeme si Vás informovat o tom, že %s Vám právě nasdílel <strong>%s</strong>.<br><a href=\"%s\">Zobrazit soubor</a><br><br>",
