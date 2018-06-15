@@ -22,7 +22,7 @@
 #body-user #header,
 #body-settings #header,
 #body-public #header {
-	background-color: #a70057;
+	background-color: #0068A2;
 }
 
 #alternative-logins li {
@@ -50,12 +50,13 @@
 
 #body-login .wrapper {
 	background-image: url(../img/wrapper-bg.svg);
-	background-position: -100px -100px:
 	background-repeat: repeat-y;
-	background-size: 350px auto;
+	/* background-size: 352px auto; */
+	background-position-x: -10px;
 	z-index: 0;
 	padding-left: 25px;
 	padding-right: 25px;
+	box-shadow: 0px 0px 5px 5px rgba(235, 235, 235, 0.3);
 	display: block;
 }
 /* log in screen background color */
