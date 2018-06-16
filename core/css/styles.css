@@ -27,16 +27,43 @@
 
 #alternative-logins li {
 	width: 280px;
+	height: 100px;
 	margin: 5px;
 }
 
-#alternative-logins a.button {
-	line-height: 25px;
-	width: 257px;
+#login-button:hover {
+	background-color:#e00077;
+	-moz-box-shadow:inset 0px 0px 23px 17px rgba(0,0,0,0.12);
+	-webkit-box-shadow:inset 0px 0px 23px 17px rgba(0,0,0,0.12);
+	box-shadow:inset 0px 0px 3px 27px rgba(0,0,0,0.12);
 }
 
-#legal-notice p.info {
+#login-button {
+	background-color:#a70057;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	border:1px solid #a80068;
+	display:inline-block;
+	cursor:pointer;
+	color:#f2e9f2;
+	font-family:Arial;
+	font-size:18px;
+	font-weight:bold;
+	padding:16px 31px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #660036;
+	display: block;
 	width: 100%;
+	cursor: pointer;
+	font-size: 20px;
+	line-height: 3em;
+	margin-bottom: 10px;
+	border-radius: 6px;
+	padding: 0;
+	vertical-align: middle;
+	text-align: center;
+	touch-action: manipulation;
+	-moz-user-select: none;
 }
 
 #body-login #header {
@@ -51,26 +78,24 @@
 #body-login .wrapper {
 	background-image: url(../img/wrapper-bg.svg);
 	background-repeat: repeat-y;
-	/* background-size: 352px auto; */
-	background-position-x: -10px;
+	background-position: 50% 50%;
 	z-index: 0;
-	padding-left: 25px;
-	padding-right: 25px;
-	box-shadow: 0px 0px 5px 5px rgba(235, 235, 235, 0.3);
+	padding-left: 55px;
+	padding-right: 55px;
+	box-shadow: 0px 0px 15px 15px rgba(195, 195, 195, 0.3);
+	-moz-box-shadow: 0px 0px 15px 15px rgba(195, 195, 195, 0.3);
+	-webkit-box-shadow:0px 0px 15px 15px rgba(195, 195, 195, 0.3);
 	display: block;
 }
 /* log in screen background color */
 /* gradient of the header color and a brighter shade */
 /* can also be a flat color or an image */
 #body-login {
-	background: '#0068A2'; /* Old browsers */
-	background: -moz-linear-gradient(top, #a70057 0%, #0068A2 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a70057), color-stop(80%,#0068A2)); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(top, #a70057 0%,#0068A2 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(top, #a70057 0%,#0068A2 100%); /* Opera11.10+ */
-	background: -ms-linear-gradient(top, #a70057 0%,#0068A2 100%); /* IE10+ */
-	background: linear-gradient(top, #a70057 0%,#0068A2 100%); /* W3C */
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a70057', endColorstr='#0068A2',GradientType=0 ); /* IE6-9 */
+	background-color: #0068A2; /* Base CESNET color */
+	background-image: url("../img/gplay.png"); /* Background pattern from Toptal Subtle Patterns */
+	background-position: 50% 50%;
+	background-size: auto;
+	background-repeat: repeat;
 }
 
 /* primary action button, use sparingly */
@@ -111,8 +136,48 @@ li.error > h1 {
 	text-align: center;
 }
 
+footer {
+	padding-left: 25px;
+	padding-right: 25px;
+	background-color: #5a5a5a;
+	-moz-box-shadow:inset 0px 9px 11px 1px rgba(0,0,0,0.22);
+	-webkit-box-shadow:inset  0px 9px 11px 1px rgba(0,0,0,0.22);
+	box-shadow: inset 0px 9px 11px 1px rgba(0,0,0,0.22);
+}
+
+.footer-left {
+	float: left;
+	max-width: 50%;
+	text-align: left;
+}
+
+.footer-left a,p {
+	font-size: 12px;
+	color: #aaaaaa;
+}
+
+.footer-right a,p {
+	font-size: 12px;
+	font-weight: bold;
+	color: #aaaaaa;
+}
+
+.footer-right {
+	margin: 0 0 10px;
+	padding: 0;
+	text-align: right;
+	float: right;
+	max-width: 50%;
+}
+
 #legal-notice > p.info {
 	padding-top: 0px;
+	line-height: 1.3em;
+	width: 100%;
+}
+
+#legal-notice a {
+	text-decoration: underline;
 }
 
 /* use logos from theme */

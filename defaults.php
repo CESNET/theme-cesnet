@@ -106,7 +106,7 @@ class OC_Theme {
 	 * @return string slogan
 	 */
 	public function getSlogan() {
-		return $this->l->t("This service is a part of CESNET <a href=\"http://www.cesnet.cz/services/?lang=en\">e-infrastructure</a>");
+		return $this->l->t("This service is a part of CESNET <a target=\"_blank\" href=\"http://www.cesnet.cz/services/?lang=en\">e-infrastructure</a>");
 	}
 
 	/**
@@ -122,8 +122,8 @@ class OC_Theme {
 	 * @return string short footer
 	 */
 	public function getShortFooter() {
-		$footer = '© 2018 <a href="'.$this->getBaseUrl().'" target="_blank\">'.$this->getEntity().'</a>'.
-			'<br/>' . $this->getSlogan();
+		$footer = '© 2018 <a href="'.$this->getBaseUrl().'" target="_blank">'.$this->getEntity().'</a>'.
+			'<br/><p class="info">' . $this->getSlogan() . '</p>';
 
 		return $footer;
 	}
@@ -133,9 +133,18 @@ class OC_Theme {
 	 * @return string long footer
 	 */
 	public function getLongFooter() {
-		$footer = '© 2018 <a href="'.$this->getBaseUrl().'" target="_blank\">'.$this->getEntity().'</a>'.
-			'<br/>' . $this->getSlogan();
-
+		$cesnetLink = '© 2018 <a href="' . $this->getBaseUrl() . '" target="_blank\">' . $this->getEntity() . '</a><br>' . $this->getSlogan();
+		$footer = '</p><div class="footer-right">'
+		. '<p class="footer-links">'
+			. '<a target="_blank" href="https://www.cesnet.cz">Home</a>'
+			. '  ·  <a target="_blank" href="https://du.cesnet.cz">' . $this->l->t('DataCare') . '</a>'
+			. '  ·  <a target="_blank" href="'. $this->l->t('https://du.cesnet.cz/en/navody/owncloud/start') .'">' . $this->l->t('User Documentation') . '</a>'
+			. '  ·  <a target="_blank" href="'. $this->l->t('https://du.cesnet.cz/en/navody/faq/start#owncloud1') .'">FAQ</a>'
+			. '  ·  <a href="mailto:support@cesnet.cz">' . $this->l->t('Contact') . '</a>'
+		. '</div>'
+		. '<div class="footer-left">'
+			. '<p>' . $cesnetLink . '</p>'
+			. '</div></p>';
 		return $footer;
 	}
 
