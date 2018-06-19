@@ -136,7 +136,7 @@ class OC_Theme {
 		$cesnetLink = '© 2018 <a href="' . $this->getBaseUrl() . '" target="_blank\">' . $this->getEntity() . '</a><br>' . $this->getSlogan();
 		$footer = '</p><div class="footer-right">'
 		. '<p class="footer-links">'
-			. '<a target="_blank" href="https://www.cesnet.cz">Home</a>'
+			. '<a target="_blank" href="https://www.cesnet.cz">CESNET</a>'
 			. '  ·  <a target="_blank" href="https://du.cesnet.cz">' . $this->l->t('DataCare') . '</a>'
 			. '  ·  <a target="_blank" href="'. $this->l->t('https://du.cesnet.cz/en/navody/owncloud/start') .'">' . $this->l->t('User Documentation') . '</a>'
 			. '  ·  <a target="_blank" href="'. $this->l->t('https://du.cesnet.cz/en/navody/faq/start#owncloud1') .'">FAQ</a>'

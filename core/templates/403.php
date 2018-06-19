@@ -15,6 +15,26 @@ if(!isset($_)) {//also provide standalone error page
 	<li class='error'>
 	<?php if(isset($_['file'])): ?>
 		<p class='hint'><?php p($_['file'])?></p>
+	<?php elseif(isset($_['unresolved_uids'])): ?>
+		<div class="hint">
+		<p class="hint">
+		<?php p($l->t('You have multiple identities associated with a different ownCloud accounts. Because of that, we were unable to reliably determine to which ownCloud account we should log you in.')); ?>
+		<br><br>
+		<?php p($l->t('The problematic identities are')); ?>
+		</p><br><ul>
+		<?php foreach ($_['unresolved_uids'] as $uid => $ocuid): ?>
+			<li class="warning"><?php p($uid); ?> &rarr; <?php p($ocuid); ?></li>
+		<?php endforeach; ?>
+		</ul>
+		<p class="notice">
+		(<?php p($l->t('eduID identity')); ?> &rarr; <?php p($l->t('ownCloud account')); ?>)
+		</p>
+		<br><br>
+		<p class="hint">
+		<?php p($l->t('Please contact us on ')); ?><a href="mailto:support@cesnet.cz">support@cesnet.cz</a>
+		<?php p($l->t(' to resolve this situation.')); ?>
+		</p>
+		</div>
 	<?php else: ?>
 		<p class="hint"><?php p($l->t('To use ownCloud service it is required to have valid affiliation (employee, student) with one of the membership organization that are fulfilling the Access Policy (AP) for the CESNET Large Infrastructure.')); ?></p>
 		<br>
