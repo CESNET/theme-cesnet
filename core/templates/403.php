@@ -31,8 +31,11 @@ if(!isset($_)) {//also provide standalone error page
 		</p>
 		<br><br>
 		<p class="hint">
+		<?php p($l->t('A. We can merge you all your identities into the one, then you can see all your data in one account ')); ?>	
 		<?php p($l->t('Please contact us on ')); ?><a href="mailto:support@cesnet.cz">support@cesnet.cz</a>
 		<?php p($l->t(' to resolve this situation.')); ?>
+		<?php p($l->t('B. You want to have more separated (independent) accounts ')); ?>
+		<?php p($l->t('Please continue to the following tutorial ')); ?><a href="https://du.cesnet.cz/en/navody/owncloud/oc_identity"</a>
 		</p>
 		</div>
 	<?php else: ?>
