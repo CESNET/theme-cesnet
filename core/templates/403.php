@@ -22,8 +22,10 @@ if(!isset($_)) {//also provide standalone error page
 		<br><br>
 		<?php p($l->t('The problematic identities are')); ?>
 		</p><br><ul>
-		<?php foreach ($_['unresolved_uids'] as $uid => $ocuid): ?>
-			<li class="warning"><?php p($uid); ?> &rarr; <?php p($ocuid); ?></li>
+		<?php foreach ($_['unresolved_uids'] as $uid => $ocids): ?>
+			<?php foreach ((array)$ocids as $ocid): ?>
+				<li class="warning"><?php p($ocid->getSamlUid()); ?> &rarr; <?php p($uid); ?></li>
+			<?php endforeach; ?>
 		<?php endforeach; ?>
 		</ul>
 		<p class="notice">
@@ -32,11 +34,13 @@ if(!isset($_)) {//also provide standalone error page
 		<br><br>
 		<p class="hint">
 		<?php p($l->t('You have two options how to solve this issue ')); ?>
+		</p><p class="hint">
 		<?php p($l->t('A. We can merge you all identities into the one, then you can see all your data in one account ')); ?>	
-		<?php p($l->t('Please contact us on ')); ?><a href="mailto:support@cesnet.cz">support@cesnet.cz</a>
+		<?php p($l->t('Please contact us on ')); ?><a class="underline" href="mailto:support@cesnet.cz">support@cesnet.cz</a>
 		<?php p($l->t(' to resolve this situation.')); ?>
-		<?php p($l->t('B. You want to have more separated (independent) accounts ')); ?>
-		<?php p($l->t('Please continue to the following tutorial ')); ?><a href="https://du.cesnet.cz/en/navody/owncloud/oc_identity"</a>
+		</p><p class="hint">
+		<?php p($l->t('B. If you have serious reasons to use two separate accounts in CESNET e-infrastructure, please contact user support at: du-support@cesnet.cz')); ?>
+		<?php print_unescaped($l->t('Please continue to the following <a class="underline" href="https://du.cesnet.cz/en/navody/owncloud/oc_identity">tutorial</a>')); ?>
 		</p>
 		</div>
 	<?php else: ?>
@@ -47,5 +51,5 @@ if(!isset($_)) {//also provide standalone error page
 		</p>
 	<?php endif; ?>
 	</li>
-	<li><a class="button" <?php print_unescaped(OC_User::getLogoutAttribute()); ?>><?php p($l->t('Return to login page')); ?></a></li>
+	<li><a class="button" <?php print_unescaped(\OC_User::getLogoutAttribute()); ?>"><?php p($l->t('Return to login page')); ?></a></li>
 </ul>
