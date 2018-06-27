@@ -35,7 +35,7 @@ if(!isset($_)) {//also provide standalone error page
 		<p class="hint">
 		<?php p($l->t('You have two options how to solve this issue ')); ?>
 		</p><p class="hint">
-		<?php p($l->t('A. We can merge you all identities into the one, then you can see all your data in one account ')); ?>	
+		<?php p($l->t('A. We can merge you all identities into the one, then you can see all your data in one account ')); ?>
 		<?php p($l->t('Please contact us on ')); ?><a class="underline" href="mailto:support@cesnet.cz">support@cesnet.cz</a>
 		<?php p($l->t(' to resolve this situation.')); ?>
 		</p><p class="hint">
@@ -44,11 +44,25 @@ if(!isset($_)) {//also provide standalone error page
 		</p>
 		</div>
 	<?php else: ?>
+		<?php if(isset($_['missing_claims']) && in_array('IsCesnetEligibleLastSeen timestamp', $_['missing_claims'])): ?>
 		<p class="hint"><?php p($l->t('To use ownCloud service it is required to have valid affiliation (employee, student) with one of the membership organization that are fulfilling the Access Policy (AP) for the CESNET Large Infrastructure.')); ?></p>
 		<br>
 		<p class="hint"><?php p($l->t('Based of those requirements, our services cannot be used by, e.g. former employees, graduates or library readers. If you have been denied access but you consider yourself to be eligible to use our services, please feel free to contact us at ')); ?>
 			<a href="mailto:support@cesnet.cz?Subject=OwnCloud Access error #<?php p(\OC::$server->getRequest()->getId()); ?>">support@cesnet.cz</a>
 		</p>
+		<?php endif; ?>
+		<?php if(isset($_['missing_claims'])): ?>
+			<br>
+			<p class="hint"><?php p($l->t('In order to access this service, we require you to provide the following missing information:')); ?></p>
+			<br>
+			<ul>
+			<?php foreach ((array)$_['missing_claims'] as $hrClaim): ?>
+				<li class="warning"><?php p($l->t($hrClaim)); ?></li>
+			<?php endforeach; ?>
+			</ul>
+		<?php endif; ?>
+		<br>
+
 	<?php endif; ?>
 	</li>
 	<li><a class="button" <?php print_unescaped(\OC_User::getLogoutAttribute()); ?>"><?php p($l->t('Return to login page')); ?></a></li>
