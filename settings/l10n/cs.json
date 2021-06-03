@@ -1,8 +1,10 @@
-{ "translations": {
-	"Your CESNET Storage Department Team" : "Váš tým Datových uložišť CESNET",
-	"Your %s account was created" : "Váš %s účet byl vytvořen",
-	"Sign In to ownCloud" : "Přihlásit se do ownCloudu",
-	"Dear user,<br><br>your ownCloud account at CESNET Data Storage has been succesfully created for you.<br><br>Below are listed details about your account.<br><br>Your username: %s<br>Server address: <a href=\"%s\">%s</a><br><a href=\"https://du.cesnet.cz/en/navody/owncloud/start\">User manual</a><br><br>If you have any questions or problems, feel free to contact us at support@cesnet.cz.<br><br>" : "Dobrý den,<br><br>Váš ownCloud účet na DÚ CESNET byl úspěšně založen.<br><br>Níže jsou uvedeny informace o Vašem účtu.<br><br>Uživatelské jméno: %s<br>Adresa serveru: <a href=\"%s\">%s</a><br><a href=\"https://du.cesnet.cz/cs/navody/owncloud/start\">Uživatelský manuál</a><br><br>V případě jakýchkoliv dotazů či potíží nás kontaktujte na support@cesnet.cz.<br><br>",
-	"Dear user,\n\nyour ownCloud account at CESNET Data Storage has been succesfully created for you.\n\nBelow are listed details about your account.\n\nYour username: %s\nServer address: %s\nUser manual: https://du.cesnet.cz/en/navody/owncloud/start\n\nIf you have any questions or problems, feel free to contact us at support@cesnet.cz.\n\n" : "Dobrý den,\n\nVáš ownCloud účet na DÚ CESNET byl úspěšně založen.\n\nNíže jsou uvedeny informace o Vašem účtu.\n\nUživatelské jméno: %s\nAdresa serveru: %s\nUživatelský manuál: https://du.cesnet.cz/en/navody/owncloud/start\n\nV případě jakýchkoliv dotazů či potíží nás kontaktujte na support@cesnet.cz.\n\n"
-},"pluralForm" :"nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;"
+{
+  "translations": {
+    "Your CESNET Storage Department Team": "Váš tým Datových uložišť CESNET",
+    "Your %s account was created": "Váš %s účet byl vytvořen",
+    "Sign In to ownCloud": "Přihlásit se do ownCloudu",
+    "Dear user,<br><br>your ownCloud account at CESNET Data Storage has been succesfully created for you.<br><br>Below are listed details about your account.<br><br>Your username: %s<br>Server address: <a href=\"%s\">%s</a><br><a href=\"https://du.cesnet.cz/en/navody/owncloud/start\">User manual</a><br><br>If you have any questions or problems, feel free to contact us at support@cesnet.cz.<br><br>": "Dobrý den,<br><br>Váš ownCloud účet na DÚ CESNET byl úspěšně založen.<br><br>Níže jsou uvedeny informace o Vašem účtu.<br><br>Uživatelské jméno: %s<br>Adresa serveru: <a href=\"%s\">%s</a><br><a href=\"https://du.cesnet.cz/cs/navody/owncloud/start\">Uživatelský manuál</a><br><br>V případě jakýchkoliv dotazů či potíží nás kontaktujte na support@cesnet.cz.<br><br>",
+    "Dear user,\n\nyour ownCloud account at CESNET Data Storage has been succesfully created for you.\n\nBelow are listed details about your account.\n\nYour username: %s\nServer address: %s\nUser manual: https://du.cesnet.cz/en/navody/owncloud/start\n\nIf you have any questions or problems, feel free to contact us at support@cesnet.cz.\n\n": "Dobrý den,\n\nVáš ownCloud účet na DÚ CESNET byl úspěšně založen.\n\nNíže jsou uvedeny informace o Vašem účtu.\n\nUživatelské jméno: %s\nAdresa serveru: %s\nUživatelský manuál: https://du.cesnet.cz/en/navody/owncloud/start\n\nV případě jakýchkoliv dotazů či potíží nás kontaktujte na support@cesnet.cz.\n\n"
+  },
+  "pluralForm": "nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;"
 }
