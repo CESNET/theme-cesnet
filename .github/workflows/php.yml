@@ -8,9 +8,7 @@ jobs:
     container: owncloudci/php:7.3
     steps:
       - uses: actions/checkout@v2
-      - name: Building dist
-        run: make dist
-      - name: Built app distribution
+      - name: Build app distribution
         run: tar -czvf theme-cesnet.tar.gz appinfo apps core *.php README.md LICENSE AUTHORS.md
       - name: Release app distribution assets
         if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags')
