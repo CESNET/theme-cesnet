@@ -40,7 +40,7 @@
 	<?php foreach ($_['cssfiles'] as $cssfile): ?>
         <link rel="stylesheet" href="<?php print_unescaped($cssfile); ?>">
 	<?php endforeach; ?>
-    <?php style('core', 'bulma.min.css'); ?>
+    <link rel="stylesheet" href="/apps/theme-cesnet/core/css/bulma.min.css">
 	<?php foreach ($_['printcssfiles'] as $cssfile): ?>
         <link rel="stylesheet" href="<?php print_unescaped($cssfile); ?>" media="print">
 	<?php endforeach; ?>
