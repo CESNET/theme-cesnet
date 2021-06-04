@@ -55,7 +55,7 @@ use OCP\IL10N; ?>
 </head>
 <body id="<?php p($_['bodyid']); ?>">
 <?php include('layout.noscript.warning.php'); ?>
-<section class="hero is-info is-fullheight">
+<section class="hero is-primary is-fullheight">
     <!-- Hero head: will stick at the top -->
     <div class="hero-head">
         <header role="banner" class="navbar">
@@ -94,7 +94,7 @@ use OCP\IL10N; ?>
                         </a>
                         <span class="navbar-item">
                             <a href="/index.php/apps/cesnet-openidconnect/redirect"
-                               class="button is-info is-inverted">
+                               class="button is-primary is-inverted">
                                 <span class="icon icon-lock-open svg">
                                 </span>
                                 <span><?php p($l->t('Log in')); ?></span>
