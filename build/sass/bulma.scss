@@ -1,25 +1,12 @@
 @charset "utf-8";
-//@import "../node_modules/bulma/bulma.sass";
-
-$datacare: #a70057;
-$grey-dark: hsl(0, 0%, 29%);
-$grey-darker: hsl(0, 0%, 21%);
-
-$primary: #0068a2;
-$link:  $datacare;
-$info: #00A1DE;
-$success: #008547;
-$warning: #FBB731;
-$danger: #E60000;
-$dark: $grey-darker;
-$text: $grey-dark;
-$orange: #d33d39;
+@import "colors";
 
 @import "../node_modules/bulma/sass/utilities/_all.sass";
 @import "../node_modules/bulma/sass/base/_all.sass";
 @import "../node_modules/bulma/sass/elements/button.sass";
 @import "../node_modules/bulma/sass/elements/container.sass";
 @import "../node_modules/bulma/sass/elements/title.sass";
+@import "../node_modules/bulma/sass/elements/content.sass";
 @import "../node_modules/bulma/sass/components/navbar.sass";
 @import "../node_modules/bulma/sass/layout/hero.sass";
 @import "../node_modules/bulma/sass/layout/section.sass";
