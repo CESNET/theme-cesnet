@@ -12,23 +12,22 @@
 		<?php
 	} ?>
     <!-- Primary Meta Tags -->
-    <title>ownCloud@CESNET</title>
-    <meta name="title" content="ownCloud@CESNET">
+    <meta name="title" content="<?php p($theme->getTitle()); ?>">
     <meta name="description"
           content="Cloud storage sync&share service for eduID users built on top of the ownCloud software.">
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://owncloud.cesnet.cz/">
-    <meta property="og:title" content="ownCloud@CESNET">
+    <meta property="og:url" content="<?php p($theme->getBaseUrl()); ?>">
+    <meta property="og:title" content="<?php p($theme->getTitle()); ?>">
     <meta property="og:description"
           content="Cloud storage sync&share service for eduID users built on top of the ownCloud software.">
     <meta property="og:image" content="">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://owncloud.cesnet.cz/">
-    <meta property="twitter:title" content="ownCloud@CESNET">
+    <meta property="twitter:url" content="<?php p($theme->getBaseUrl()); ?>">
+    <meta property="twitter:title" content="<?php p($theme->getTitle()); ?>">
     <meta property="twitter:description"
           content="Cloud storage sync&share service for eduID users built on top of the ownCloud software.">
     <meta property="twitter:image" content="">

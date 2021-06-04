@@ -16,7 +16,7 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-@import "https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css";
+@import 'bulma.min.css';
 
 /* header color */
 /* this is the main brand color */
