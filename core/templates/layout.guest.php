@@ -1,3 +1,6 @@
+<?php /** @var $l IL10N */
+
+use OCP\IL10N; ?>
 <!DOCTYPE html>
 <html class="ng-csp" data-placeholder-focus="false" lang="<?php p($_['language']); ?>">
 <head data-requesttoken="<?php p($_['requesttoken']); ?>">
@@ -51,24 +54,50 @@
 </head>
 <body id="<?php p($_['bodyid']); ?>">
 <?php include('layout.noscript.warning.php'); ?>
-<div class="wrapper">
-    <div class="v-align">
-		<?php if ($_['bodyid'] === 'body-login'): ?>
-            <header role="banner">
-                <div id="header">
-                    <div class="logo">
+<section class="hero is-success is-info">
+	<?php if ($_['bodyid'] === 'body-login'): ?>
+        <div class="hero-head">
+            <header role="banner" class="navbar">
+                <div class="container" id="header">
+                    <div class="navbar-brand">
+                        <!-- Navbar Logo -->
+                        <a class="navbar-item">
+                            <div class="logo">
+                        </a>
                         <h1 class="hidden-visually">
 							<?php print_unescaped($theme->getHTMLName()); ?>
                         </h1>
+                        <div id="logo-claim"
+                             style="display:none;"><?php print_unescaped($theme->getLogoClaim()); ?></div>
+                        <!-- Navbar menu -->
+                        <span class="navbar-burger" data-target="navbarMenu">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                          </span>
                     </div>
-                    <div id="logo-claim" style="display:none;"><?php print_unescaped($theme->getLogoClaim()); ?></div>
+                    <!-- Navbar menu options -->
+                    <div id="navbarMenu" class="navbar-menu">
+                        <div class="navbar-end">
+                            <a class="navbar-item is-active">
+                                <?php p($l->t('Documentation')); ?>
+                            </a>
+                            <a class="navbar-item">
+								FAQ
+                            </a>
+                            <a class="navbar-item">
+								<?php p($l->t('Contact')); ?>
+                            </a>
+                            <span class="navbar-item"></span>
+                        </div>
+                    </div>
                 </div>
             </header>
-		<?php endif; ?>
-		<?php print_unescaped($_['content']); ?>
-        <div class="push"></div><!-- for sticky footer -->
-    </div>
-</div>
+        </div>
+	<?php endif; ?>
+	<?php print_unescaped($_['content']); ?>
+    <div class="push"></div><!-- for sticky footer -->
+</section>
 <footer role="contentinfo">
     <p class="info">
 		<?php print_unescaped($theme->getLongFooter()); ?>
