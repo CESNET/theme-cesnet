@@ -7,6 +7,9 @@ jobs:
     runs-on: ubuntu-latest
     container: owncloudci/php:7.3
     steps:
+      - name: Build scss assets
+        working-directory: ./build
+        run: npm run build-all
       - uses: actions/checkout@v2
       - name: Build app distribution
         run: tar -czvf theme-cesnet.tar.gz appinfo apps core *.php README.md LICENSE AUTHORS.md

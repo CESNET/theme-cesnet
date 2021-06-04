@@ -112,7 +112,7 @@ use OCP\IL10N; ?>
         </div>
     </div>
     <footer class="hero-foot" role="contentinfo">
-        <div class="content has-text-centered">
+        <div class="content has-text-weight-light has-text-centered">
             <p>
 				<?php print_unescaped($theme->getLongFooter()); ?>
             </p>
