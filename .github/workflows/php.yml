@@ -8,6 +8,9 @@ jobs:
     container: owncloudci/php:7.3
     steps:
       - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          node-version: '15'
       - name: Install build dependencies
         working-directory: build
         run: npm install
