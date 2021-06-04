@@ -44,6 +44,7 @@ use OCP\IL10N; ?>
         <link rel="stylesheet" href="<?php print_unescaped($cssfile); ?>">
 	<?php endforeach; ?>
     <link rel="stylesheet" href="/apps/theme-cesnet/core/css/bulma.min.css">
+    <link rel="stylesheet" href="/apps/theme-cesnet/core/css/cubes.min.css">
 	<?php foreach ($_['printcssfiles'] as $cssfile): ?>
         <link rel="stylesheet" href="<?php print_unescaped($cssfile); ?>" media="print">
 	<?php endforeach; ?>
@@ -54,54 +55,69 @@ use OCP\IL10N; ?>
 </head>
 <body id="<?php p($_['bodyid']); ?>">
 <?php include('layout.noscript.warning.php'); ?>
-<section class="hero is-success is-info">
-	<?php if ($_['bodyid'] === 'body-login'): ?>
-        <div class="hero-head">
-            <header role="banner" class="navbar">
-                <div class="container" id="header">
-                    <div class="navbar-brand">
-                        <!-- Navbar Logo -->
-                        <a class="navbar-item">
-                            <div class="logo">
-                        </a>
-                        <h1 class="hidden-visually">
-							<?php print_unescaped($theme->getHTMLName()); ?>
-                        </h1>
-                        <div id="logo-claim"
-                             style="display:none;"><?php print_unescaped($theme->getLogoClaim()); ?></div>
-                        <!-- Navbar menu -->
-                        <span class="navbar-burger" data-target="navbarMenu">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                          </span>
+<section class="hero is-info is-fullheight">
+    <!-- Hero head: will stick at the top -->
+    <div class="hero-head">
+        <header role="banner" class="navbar">
+            <div class="container">
+                <div class="navbar-brand">
+                    <!-- Navbar Logo -->
+                    <a href="<?php p($theme->getBaseUrl()); ?>" class="navbar-item">
+                        <div class="logo"></div>
+                    </a>
+                    <h1 class="hidden-visually">
+						<?php print_unescaped($theme->getHTMLName()); ?>
+                    </h1>
+                    <div id="logo-claim"
+                         style="display:none;"><?php print_unescaped($theme->getLogoClaim()); ?>
                     </div>
-                    <!-- Navbar menu options -->
-                    <div id="navbarMenu" class="navbar-menu">
-                        <div class="navbar-end">
-                            <a class="navbar-item is-active">
-                                <?php p($l->t('Documentation')); ?>
+                    <!-- Navbar menu -->
+                    <span class="navbar-burger" data-target="navbarMenu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                </div>
+                <!-- Navbar menu options -->
+                <div id="navbarMenu" class="navbar-menu">
+                    <div class="navbar-end">
+                        <a class="navbar-item" target="_blank" href="https://du.cesnet.cz/en/navody/owncloud/start">
+							<?php p($l->t('Documentation')); ?>
+                        </a>
+                        <a class="navbar-item"
+                           target="_blank"
+                           href="https://du.cesnet.cz/en/navody/faq/start#owncloud1">
+                            FAQ
+                        </a>
+                        <a class="navbar-item" href="mailto:support@cesnet.cz">
+							<?php p($l->t('Contact')); ?>
+                        </a>
+                        <span class="navbar-item">
+                            <a href="/index.php/apps/cesnet-openidconnect/redirect"
+                               class="button is-info is-inverted">
+                                <span class="icon icon-lock-open svg">
+                                </span>
+                                <span><?php p($l->t('Log in')); ?></span>
                             </a>
-                            <a class="navbar-item">
-								FAQ
-                            </a>
-                            <a class="navbar-item">
-								<?php p($l->t('Contact')); ?>
-                            </a>
-                            <span class="navbar-item"></span>
-                        </div>
+                        </span>
                     </div>
                 </div>
-            </header>
+            </div>
+        </header>
+    </div>
+    <!-- Hero content: will be in the middle -->
+    <div class="hero-body">
+        <div class="container has-text-centered">
+			<?php print_unescaped($_['content']); ?>
         </div>
-	<?php endif; ?>
-	<?php print_unescaped($_['content']); ?>
-    <div class="push"></div><!-- for sticky footer -->
+    </div>
+    <footer class="hero-foot" role="contentinfo">
+        <div class="content has-text-centered">
+            <p>
+				<?php print_unescaped($theme->getLongFooter()); ?>
+            </p>
+        </div>
+    </footer>
 </section>
-<footer role="contentinfo">
-    <p class="info">
-		<?php print_unescaped($theme->getLongFooter()); ?>
-    </p>
-</footer>
 </body>
 </html>
