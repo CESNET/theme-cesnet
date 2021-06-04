@@ -13,6 +13,7 @@ $warning: #FBB731;
 $danger: #E60000;
 $dark: $grey-darker;
 $text: $grey-dark;
+$orange: #d33d39;
 
 @import "../node_modules/bulma/sass/utilities/_all.sass";
 @import "../node_modules/bulma/sass/base/_all.sass";
@@ -23,4 +24,3 @@ $text: $grey-dark;
 @import "../node_modules/bulma/sass/layout/hero.sass";
 @import "../node_modules/bulma/sass/layout/section.sass";
 
-$orange: #d33d39;
