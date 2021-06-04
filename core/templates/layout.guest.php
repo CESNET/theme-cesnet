@@ -5,7 +5,7 @@
     <title><?php p($theme->getTitle()); ?></title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="referrer" content="never">
-    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, maximum-scale=1.0">
 	<?php if ($theme->getiTunesAppId() !== '') {
 		?>
         <meta name="apple-itunes-app" content="app-id=<?php p($theme->getiTunesAppId()); ?>">
@@ -19,7 +19,7 @@
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://owncloud.cesnet.cz/index.php/login">
+    <meta property="og:url" content="https://owncloud.cesnet.cz/">
     <meta property="og:title" content="ownCloud@CESNET">
     <meta property="og:description"
           content="Cloud storage sync&share service for eduID users built on top of the ownCloud software.">
@@ -27,7 +27,7 @@
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://owncloud.cesnet.cz/index.php/login">
+    <meta property="twitter:url" content="https://owncloud.cesnet.cz/">
     <meta property="twitter:title" content="ownCloud@CESNET">
     <meta property="twitter:description"
           content="Cloud storage sync&share service for eduID users built on top of the ownCloud software.">

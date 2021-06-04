@@ -5,7 +5,30 @@
     <title><?php p($theme->getTitle()); ?></title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="referrer" content="never">
-    <meta name="viewport" content="width=device-width, minimum-scale=1.0, maximum-scale=1.0">
+
+    <!-- Primary Meta Tags -->
+    <title>ownCloud@CESNET</title>
+    <meta name="title" content="ownCloud@CESNET">
+    <meta name="description"
+          content="Cloud storage sync&share service for eduID users built on top of the ownCloud software.">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://owncloud.cesnet.cz/">
+    <meta property="og:title" content="ownCloud@CESNET">
+    <meta property="og:description"
+          content="Cloud storage sync&share service for eduID users built on top of the ownCloud software.">
+    <meta property="og:image" content="">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://owncloud.cesnet.cz/">
+    <meta property="twitter:title" content="ownCloud@CESNET">
+    <meta property="twitter:description"
+          content="Cloud storage sync&share service for eduID users built on top of the ownCloud software.">
+    <meta property="twitter:image" content="">
+
+    <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, maximum-scale=1.0">
     <meta name="theme-color" content="<?php p($theme->getMailHeaderColor()); ?>">
     <link rel="icon" href="<?php print_unescaped(image_path('', 'favicon.ico')); /* IE11+ supports png */ ?>">
     <link rel="apple-touch-icon-precomposed" href="<?php print_unescaped(image_path('', 'favicon-touch.png')); ?>">
