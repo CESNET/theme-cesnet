@@ -8,7 +8,7 @@ jobs:
     container: owncloudci/php:7.3
     steps:
       - name: Build scss assets
-        working-directory: ./build
+        working-directory: build
         run: npm run build-all
       - uses: actions/checkout@v2
       - name: Build app distribution
