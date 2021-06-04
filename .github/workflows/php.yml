@@ -9,8 +9,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Build scss assets
-          working-directory: build
-          run: npm run build-all
+        working-directory: build
+        run: npm run build-all
       - name: Build app distribution
         run: tar -czvf theme-cesnet.tar.gz appinfo apps core *.php README.md LICENSE AUTHORS.md
       - name: Release app distribution assets
