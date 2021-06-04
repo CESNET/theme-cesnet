@@ -115,7 +115,7 @@ class OC_Theme {
 	 * @return string logo claim
 	 */
 	public function getLogoClaim() {
-		return '<a href="' . $this->getBaseUrl() . '">ownCloud@CESNET</a>';
+		return '<a href="' . $this->getBaseUrl() . '">DataCare</a>';
 	}
 
 	public function getPrivacyPolicyUrl() {
