@@ -1,4 +1,5 @@
 ## theme-example for ownCloud
+![image](docs/screenshot.png)
 
 ### Use the theme-example App
 
