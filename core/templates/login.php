@@ -92,7 +92,7 @@ script('core', [
             </fieldset>
         </form>
     </div>
-    <div class="column mr-6">
+    <div class="column is-hidden-touch mr-6">
         <div class="tile"
             <!-- Hero Cubes: https://codepen.io/jonambas/pen/OPqbzx-->
             <div class="layer bottom">

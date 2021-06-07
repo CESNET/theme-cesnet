@@ -113,6 +113,10 @@ button.primary:focus,
 	background-color: #005e93 !important;
 }
 
+.hero-body {
+	overflow: hidden;
+}
+
 .message-body {
 	border-color: white !important;
 	color: white !important;
