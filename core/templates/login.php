@@ -21,6 +21,9 @@ script('core', [
         <h2 class="subtitle is-3 has-text-weight-light has-text-left">
 			<?php p($l->t('Sync, Share & Backup all of your academic data.')); ?>
         </h2>
+        <div class="has-text-left is-size-6 has-text-weight-bold">
+            ▘▘▖▘▘▘▘▘▘▘▖▘▘▘▘▘▖▘▘▘▖▘▘▘▘▖▖▘▘▘▖▘▘▘▘▘▘▘▖▘▖▘▘▘▘▖▖▘▖▘▘▖▖▘▖▖▘▘▖▖▖▖▘▘▘▘▖▘▖▖▘▘▖▖▖▖▘
+        </div>
         <form class="has-text-left">
             <fieldset>
 				<?php if (!empty($_['redirect_url'])) {
@@ -84,7 +87,7 @@ script('core', [
                 </a>
 				<?php print_unescaped($l->t(' and with the <a href="https://www.cesnet.cz/sdruzeni/ochrana-osobnich-udaju/" target="_blank">Privacy policy</a> for the service.')); ?>
             </div>
-        </article
+        </article>
     </div>
     <div class="column">
         <div class="tile">
