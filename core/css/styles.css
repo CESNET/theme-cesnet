@@ -105,6 +105,10 @@ button.primary:focus,
 	opacity: 0.5;
 }
 
+is-xsmall {
+	font-size: 0.45rem;
+}
+
 .hero-title {
 	font-size: 6rem !important;
 }

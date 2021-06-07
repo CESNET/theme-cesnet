@@ -70,22 +70,27 @@ script('core', [
                     </p>
 					<?php
 				} ?>
-                <a class="button my-6 is-large is-uppercase"
-                   href="<?php print_unescaped($_['alt_login'][0]['href']); ?>"><?php p($l->t('Log in')); ?></a>
+                <div class="level">
+                    <div class="level-left">
+                        <a class="button my-6 is-large level-item is-uppercase"
+                           href="<?php print_unescaped($_['alt_login'][0]['href']); ?>"><?php p($l->t('Log in')); ?></a>
+                        <article class="level-item message is-xsmall">
+                            <div class="message-body">
+                                <?php p($l->t('By logging in you agree with the ')); ?>
+                                <a target="_blank" href="<?php p($l->t('https://du.cesnet.cz/en/provozni_pravidla/start')); ?>" >
+                                    <?php p($l->t('terms of use')); ?>
+                                </a>
+                                <?php print_unescaped($l->t(' and with the <a href="https://www.cesnet.cz/sdruzeni/ochrana-osobnich-udaju/" target="_blank">Privacy policy</a> for the service.')); ?>
+                            </div>
+                        </article>
+                    </div>
+                </div>
+
                 <input type="hidden" name="timezone-offset" id="timezone-offset"/>
                 <input type="hidden" name="timezone" id="timezone"/>
                 <input type="hidden" name="requesttoken" value="<?php p($_['requesttoken']) ?>">
             </fieldset>
         </form>
-        <article class="message is-small">
-            <div class="message-body">
-				<?php p($l->t('By logging in you agree with the ')); ?>
-                <a target="_blank" href="<?php p($l->t('https://du.cesnet.cz/en/provozni_pravidla/start')); ?>" >
-                    <?php p($l->t('terms of use')); ?>
-                </a>
-				<?php print_unescaped($l->t(' and with the <a href="https://www.cesnet.cz/sdruzeni/ochrana-osobnich-udaju/" target="_blank">Privacy policy</a> for the service.')); ?>
-            </div>
-        </article>
     </div>
     <div class="column">
         <div class="tile">
