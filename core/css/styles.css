@@ -106,7 +106,16 @@ button.primary:focus,
 }
 
 is-xsmall {
-	font-size: 0.45rem;
+	font-size: 0.65rem !important;
+}
+
+.message {
+	background-color: #005e93 !important;
+}
+
+.message-body {
+	border-color: white !important;
+	color: white !important;
 }
 
 .hero-title {
