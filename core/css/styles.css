@@ -101,6 +101,10 @@ button.primary:focus,
 	}
 }
 
+.has-half-opacity {
+	opacity: 0.5;
+}
+
 .hero-title {
 	font-size: 6rem !important;
 }

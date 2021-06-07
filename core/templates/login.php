@@ -21,7 +21,7 @@ script('core', [
         <h2 class="subtitle is-3 has-text-weight-light has-text-left">
 			<?php p($l->t('Sync, Share & Backup all of your academic data.')); ?>
         </h2>
-        <div class="has-text-left is-size-6 has-text-weight-bold">
+        <div class="has-half-opacity has-text-left is-size-6 has-text-weight-bold">
             ▘▘▖▘▘▘▘▘▘▘▖▘▘▘▘▘▖▘▘▘▖▘▘▘▘▖▖▘▘▘▖▘▘▘▘▘▘▘▖▘▖▘▘▘▘▖▖▘▖▘▘▖▖▘▖▖▘▘▖▖▖▖▘▘▘▘▖▘▖▖▘▘▖▖▖▖▘
         </div>
         <form class="has-text-left">
