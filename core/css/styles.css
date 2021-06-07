@@ -106,7 +106,7 @@ button.primary:focus,
 }
 
 .is-xsmall {
-	font-size: 0.65rem !important;
+	font-size: 0.75rem !important;
 }
 
 .message {
@@ -116,6 +116,10 @@ button.primary:focus,
 .message-body {
 	border-color: white !important;
 	color: white !important;
+}
+
+.message.is-danger .message-body {
+	border-color: #E60000 !important;
 }
 
 .hero-title {

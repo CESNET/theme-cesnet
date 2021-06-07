@@ -113,7 +113,7 @@ use OCP\IL10N; ?>
     </div>
     <footer class="hero-foot" role="contentinfo">
         <div class="content has-text-weight-light has-text-centered">
-            <p>
+            <p class="is-xsmall">
 				<?php print_unescaped($theme->getLongFooter()); ?>
             </p>
         </div>
