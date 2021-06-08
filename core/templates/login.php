@@ -15,10 +15,10 @@ script('core', [
 <div class="columns px-4">
     <div class="column">
         <!-- Hero content -->
-        <h1 class="hero-title title has-text-weight-bold is-1 is-1-desktop-only is-2-tablet-only is-3-mobile-only has-text-left">
+        <h1 class="hero-title title has-text-weight-bold is-size-1-desktop is-size-2-tablet is-size-3-mobile has-text-left">
             ownCloud @ <b>CESNET</b>
         </h1>
-        <h2 class="subtitle is-3 has-text-weight-light has-text-left">
+        <h2 class="subtitle is-size-3-desktop is-size-4-tablet has-text-weight-light has-text-left">
 			<?php p($l->t('Sync, Share & Backup all of your academic data.')); ?>
         </h2>
         <div class="has-half-opacity has-text-left is-size-7 has-text-weight-bold">▘▘▖▘▘▘▘▘▘▘▖▘▘▘▘▘▖▘▘▘▖▘▘▖▖▖▘▘▘▘▖▘▘▖▖▘▘▖▘▘▘▘▘▘▘▖▘▖▘▘▘▖▖▘▖▖</div>

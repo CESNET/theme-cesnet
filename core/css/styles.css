@@ -129,3 +129,7 @@ button.primary:focus,
 .layer {
 	left: 25rem !important;
 }
+
+.container {
+	width: 100% !important;
+}
