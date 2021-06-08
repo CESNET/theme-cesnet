@@ -126,10 +126,6 @@ button.primary:focus,
 	border-color: #E60000 !important;
 }
 
-.hero-title {
-	font-size: 6rem !important;
-}
-
 .layer {
-	left: 18rem !important;
+	left: 25rem !important;
 }
