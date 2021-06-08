@@ -12,7 +12,7 @@ script('core', [
 ]);
 ?>
 <!--[if IE 8]><style>input[type="checkbox"]{padding:0;}</style><![endif]-->
-<div class="columns">
+<div class="columns px-4">
     <div class="column">
         <!-- Hero content -->
         <h1 class="hero-title title has-text-weight-bold is-1 is-1-desktop-only is-2-tablet-only is-3-mobile-only has-text-left">
@@ -93,7 +93,7 @@ script('core', [
         </form>
     </div>
     <div class="column is-hidden-touch mr-6">
-        <div class="tile"
+        <div class="tile">
             <!-- Hero Cubes: https://codepen.io/jonambas/pen/OPqbzx-->
             <div class="layer bottom">
                 <div class="cube nw"></div>
