@@ -5,6 +5,6 @@ print_unescaped($l->t("Dear user,\n\nyour ownCloud account at CESNET Data Storag
 p($l->t("Your CESNET Storage Department Team"));
 ?>
 
-	--
+    --
 <?php p($theme->getName() . ' - ' . $theme->getSlogan()); ?>
-<?php p("\n".$theme->getBaseUrl());
+<?php print_unescaped("\n".$theme->getBaseUrl());

@@ -34,8 +34,7 @@
 print_unescaped(\str_replace('{link}', "<a href=\"{$_['link']}\">{$_['link']}</a>", $l->t('Please use the following link to reset your password: {link}')));
 print_unescaped("<br><br>");
 // TRANSLATORS term at the end of a mail
-p($l->t("Cheers!"));
-?>
+p($l->t('Your CESNET Storage Department Team'));?>
 </td>
 </tr>
 <tr><td colspan="2">&nbsp;</td></tr>
