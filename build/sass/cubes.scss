@@ -1,0 +1,202 @@
+@charset "utf-8";
+/*
+Copyright (c) 2021 by Jon Ambas (https://codepen.io/jonambas/pen/OPqbzx)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated
+documentation files (the "Software"), to deal in the Software without restriction, including without limitation the
+rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit
+persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial
+portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED
+TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL
+THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+ TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+$cube-size: 85;
+$animation-duration: 7.7s;
+$easing: cubic-bezier(0.645, 0.045, 0.355, 1);
+$base-matrix: matrix(0.9, 0.5, 0, 1, 0, 0);
+
+@import "colors";
+
+@function base($n) {
+  @return $n * ($cube-size - 1px);
+}
+
+.layer {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  &.top {
+    animation: $animation-duration top $easing infinite;
+  }
+  &.bottom {
+    animation: $animation-duration bottom $easing infinite;
+  }
+}
+
+$radial-map: (
+        "n": (
+                x1: base(1),
+                y1: base(-1),
+                x2: base(1),
+                y2: base(-1),
+                x3: base(2),
+                y3: base(-2),
+                x4: base(2),
+                y4: base(-2)
+        ),
+        "s": (
+                x1: base(-1),
+                y1: base(1),
+                x2: base(-1),
+                y2: base(1),
+                x3: base(-2),
+                y3: base(2),
+                x4: base(-2),
+                y4: base(2)
+        ),
+        "e": (
+                x1: base(1),
+                y1: 0,
+                x2: base(2),
+                y2: 0,
+                x3: base(2),
+                y3: 0,
+                x4: base(1),
+                y4: 0
+        ),
+        "w": (
+                x1: base(-1),
+                y1: 0,
+                x2: base(-2),
+                y2: 0,
+                x3: base(-2),
+                y3: 0,
+                x4: base(-1),
+                y4: 0
+        ),
+        "ne": (
+                x1: base(2),
+                y1: base(-1),
+                x2: base(3),
+                y2: base(-1),
+                x3: base(4),
+                y3: base(-2),
+                x4: base(3),
+                y4: base(-2)
+        ),
+        "se": (
+                x1: 0,
+                y1: base(1),
+                x2: base(1),
+                y2: base(1),
+                x3: base(0),
+                y3: base(2),
+                x4: base(-1),
+                y4: base(2)
+        ),
+        "sw": (
+                x1: base(-2),
+                y1: base(1),
+                x2: base(-3),
+                y2: base(1),
+                x3: base(-4),
+                y3: base(2),
+                x4: base(-3),
+                y4: base(2)
+        ),
+        "nw": (
+                x1: base(0),
+                y1: base(-1),
+                x2: base(-1),
+                y2: base(-1),
+                x3: base(0),
+                y3: base(-2),
+                x4: base(1),
+                y4: base(-2)
+        )
+);
+
+@each $position, $points in $radial-map {
+  .#{$position} {
+    animation: $animation-duration $position $easing infinite;
+  }
+  @keyframes #{$position} {
+    0%,
+    83.33%,
+    100% {
+      transform: $base-matrix
+      translate(map-get($points, x1), map-get($points, y1));
+    }
+    16.66% {
+      transform: $base-matrix
+      translate(map-get($points, x2), map-get($points, y2));
+    }
+    33.33%,
+    50% {
+      transform: $base-matrix
+      translate(map-get($points, x3), map-get($points, y3));
+    }
+    66.66% {
+      transform: $base-matrix
+      translate(map-get($points, x4), map-get($points, y4));
+    }
+  }
+}
+
+.cube {
+  position: absolute;
+  top: 45%;
+  left: 45%;
+  width: $cube-size + 0px;
+  height: $cube-size + 0px;
+  margin: 0 auto;
+  background: $orange;
+  transform: $base-matrix;
+
+  &:before,
+  &:after {
+    display: block;
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+
+  &:before {
+    background: $warning;
+    transform: matrix(1, -1, 1, 0, $cube-size / 2, -$cube-size);
+  }
+
+  &:after {
+    background: $link;
+    transform: matrix(1, -1, 0, 1, $cube-size, -$cube-size / 2);
+  }
+}
+
+@keyframes top {
+  0%,
+  33.33%,
+  100% {
+    transform: translate(0, base(-1));
+  }
+  50%,
+  83.33% {
+    transform: translate(0, base(-2));
+  }
+}
+@keyframes bottom {
+  0%,
+  33.33%,
+  100% {
+    transform: translate(0, base(1));
+  }
+  50%,
+  83.33% {
+    transform: translate(0, base(2));
+  }
+}

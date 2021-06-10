@@ -1,0 +1,19 @@
+{
+  "name": "cesnet-brand",
+  "version": "1.0.0",
+  "description": "",
+  "main": "sass/bulma.scss",
+  "scripts": {
+    "cubes-build": "node-sass --omit-source-map-url sass/cubes.scss ../core/css/cubes.min.css --output-style compressed",
+    "bulma-build": "node-sass --omit-source-map-url sass/bulma.scss ../core/css/bulma.min.css --output-style compressed",
+    "build-all": "npm run bulma-build && npm run cubes-build",
+    "css-watch": "npm run bulma-build -- --watch",
+    "start": "npm run css-watch"
+  },
+  "author": "Miroslav Bauer @ CESNET",
+  "license": "MIT",
+  "devDependencies": {
+    "bulma": "^0.9.2",
+    "node-sass": "^6.0.0"
+  }
+}

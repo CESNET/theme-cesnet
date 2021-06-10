@@ -16,86 +16,12 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
-
 /* header color */
-/* this is the main brand color */
+/* this is the main build color */
 #body-user #header,
 #body-settings #header,
 #body-public #header {
 	background-color: #0068A2;
-}
-
-#alternative-logins li {
-	width: 280px;
-	height: 100px;
-	margin: 5px;
-}
-
-#login-button:hover {
-	background-color:#e00077;
-	-moz-box-shadow:inset 0px 0px 23px 17px rgba(0,0,0,0.12);
-	-webkit-box-shadow:inset 0px 0px 23px 17px rgba(0,0,0,0.12);
-	box-shadow:inset 0px 0px 3px 27px rgba(0,0,0,0.12);
-}
-
-#login-button {
-	background-color:#a70057;
-	-moz-border-radius:10px;
-	-webkit-border-radius:10px;
-	border:1px solid #a80068;
-	display:inline-block;
-	cursor:pointer;
-	color:#f2e9f2;
-	font-family:Arial;
-	font-size:18px;
-	font-weight:bold;
-	padding:16px 31px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #660036;
-	display: block;
-	width: 100%;
-	cursor: pointer;
-	font-size: 20px;
-	line-height: 3em;
-	margin-bottom: 10px;
-	border-radius: 6px;
-	padding: 0;
-	vertical-align: middle;
-	text-align: center;
-	touch-action: manipulation;
-	-moz-user-select: none;
-}
-
-#body-login #header {
-	padding-top: 50px;
-}
-
-#body-login a.button {
-	display: block;
-	margin: 0px;
-}
-
-#body-login .wrapper {
-	background-image: url(../img/wrapper-bg.svg);
-	background-repeat: repeat-y;
-	background-position: 50% 50%;
-	z-index: 0;
-	padding-left: 55px;
-	padding-right: 55px;
-	box-shadow: 0px 0px 15px 15px rgba(195, 195, 195, 0.3);
-	-moz-box-shadow: 0px 0px 15px 15px rgba(195, 195, 195, 0.3);
-	-webkit-box-shadow:0px 0px 15px 15px rgba(195, 195, 195, 0.3);
-	display: block;
-}
-/* log in screen background color */
-/* gradient of the header color and a brighter shade */
-/* can also be a flat color or an image */
-#body-login {
-	background-color: #0068A2; /* Base CESNET color */
-	background-image: url("../img/gplay.png"); /* Background pattern from Toptal Subtle Patterns */
-	background-position: 50% 50%;
-	background-size: auto;
-	background-repeat: repeat;
 }
 
 /* primary action button, use sparingly */
@@ -111,7 +37,7 @@ input[type="button"].primary:active,
 button.primary:active,
 .button.primary:active {
 	border-color: #745bca;
-	background-color: #a70057;
+	background-color: #947bea;
 }
 .primary:hover,
 input[type="submit"].primary:hover,
@@ -132,88 +58,78 @@ button.primary:focus,
 	background-color: #745bca;
 }
 
-li.error > h1 {
-	text-align: center;
-}
-
-footer {
-	padding-left: 25px;
-	padding-right: 25px;
-	background-color: #5a5a5a;
-	-moz-box-shadow:inset 0px 9px 11px 1px rgba(0,0,0,0.22);
-	-webkit-box-shadow:inset  0px 9px 11px 1px rgba(0,0,0,0.22);
-	box-shadow: inset 0px 9px 11px 1px rgba(0,0,0,0.22);
-}
-
-.underline {
-	text-decoration: underline;
-}
-
-.footer-left {
-	float: left;
-	max-width: 50%;
-	text-align: left;
-}
-
-.footer-right > p > a {
-	font-size: 12px;
-	color: #cccccc;
-	text-shadow: 0 1px 1px rgba(10,10,10,0.22);
-}
-
-.footer-right > p {
-	font-size: 12px;
-	color: #cccccc;
-	text-shadow: 0 1px 1px rgba(10,10,10,0.22);
-}
-
-.footer-left > p > a {
-	font-size: 12px;
-	font-weight: bold;
-	color: #cccccc;
-	text-shadow: 0 1px 2px rgba(10,10,10,0.22);
-}
-
-.footer-left > p {
-	font-size: 12px;
-	color: #cccccc;
-	text-shadow: 0 1px 1px rgba(10,10,10,0.22);
-}
-
-.footer-right {
-	margin: 0 0 10px;
-	padding: 0;
-	text-align: right;
-	float: right;
-	max-width: 50%;
-}
-
-#legal-notice > p.info {
-	padding-top: 0px;
-	line-height: 1.3em;
-	width: 100%;
-	text-shadow: 0 1px 2px rgba(0,0,0,0.52);
-}
-
-#legal-notice a {
-	text-decoration: underline;
-}
-
 /* use logos from theme */
-#header .elixir-logo {
-	background-image: url('../img/logo-elixir.svg');
-	background-size: 250px auto;
+.logo {
+	background-image: url('../img/logo.svg');
 	width: 250px;
-	height: 150px;
-}
-#header .logo {
-	background-image: url('../img/logo-du.svg');
-	background-size: 250px auto;
-	width: 250px;
-	height: 150px;
+	height: 121px;
 }
 #header .logo-icon {
 	background-image: url('../img/logo-icon.svg');
-	background-size: 34px auto;
 	height: 34px;
+	line-height: initial;
+}
+#owncloud {
+	padding: 3px;
+}
+
+#body-login form {
+	width: unset;
+	margin: unset;
+	padding: unset;
+	position: unset;
+}
+
+/* show Claim */
+#body-user #logo-claim  {
+	display: initial !important;
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translateX(-50%);
+	padding-top: 17px;
+	padding-left: 170px;
+	height: 45px;
+}
+#body-user #logo-claim a {
+	color: #fff;
+}
+/* hide on small screens */
+@media only screen and (max-width: 767px) {
+	#body-user #logo-claim  {
+		display: none !important;
+	}
+}
+
+.has-half-opacity {
+	opacity: 0.5;
+}
+
+.is-xsmall {
+	font-size: 0.75rem !important;
+}
+
+.message {
+	background-color: #005e93 !important;
+}
+
+.hero-body {
+	overflow: hidden;
+}
+
+.message-body {
+	border-color: white !important;
+	color: white !important;
+}
+
+.message.is-danger .message-body {
+	border-color: #E60000 !important;
+}
+
+.layer {
+	left: 25rem !important;
+}
+
+.container {
+	width: 100% !important;
 }

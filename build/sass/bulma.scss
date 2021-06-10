@@ -1,0 +1,23 @@
+@charset "utf-8";
+@import "colors";
+
+$size-1: 6rem !default;
+$size-2: 4.5rem !default;
+$size-3: 3rem !default;
+
+@import "../node_modules/bulma/sass/utilities/_all.sass";
+@import "../node_modules/bulma/sass/base/_all.sass";
+@import "../node_modules/bulma/sass/elements/button.sass";
+@import "../node_modules/bulma/sass/elements/container.sass";
+@import "../node_modules/bulma/sass/elements/title.sass";
+@import "../node_modules/bulma/sass/elements/content.sass";
+@import "../node_modules/bulma/sass/components/navbar.sass";
+@import "../node_modules/bulma/sass/components/message.sass";
+@import "../node_modules/bulma/sass/components/level.sass";
+@import "../node_modules/bulma/sass/layout/hero.sass";
+@import "../node_modules/bulma/sass/layout/section.sass";
+@import "../node_modules/bulma/sass/grid/columns.sass";
+@import "../node_modules/bulma/sass/helpers/typography.sass";
+@import "../node_modules/bulma/sass/helpers/spacing.sass";
+@import "../node_modules/bulma/sass/helpers/visibility.sass";
+

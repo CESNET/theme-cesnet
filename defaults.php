@@ -1,25 +1,24 @@
 <?php
 /**
- * ownCloud - theme-cesnet
- *
- * This file is licensed under the Affero General Public License version 3 or
- * later. See the COPYING file.
- *
- * @author Miroslav Bauer, CESNET <bauer@cesnet.cz>
- * @copyright Miroslav Bauer, CESNET 2018
+ * @author Björn Schießle <schiessle@owncloud.com>
+ * @author Jan-Christoph Borchardt, http://jancborchardt.net
+ * @copyright Copyright (c) 2018, ownCloud GmbH
  * @license AGPL-3.0
+ *
+ * This code is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License, version 3,
+ * as published by the Free Software Foundation.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+ * GNU Affero General Public License for more details.
+ *
+ * You should have received a copy of the GNU Affero General Public License, version 3,
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>
  */
 
 class OC_Theme {
-
-	function __construct() {
-		$this->ThemeName = 'cesnet';
-		$this->l = \OC::$server->getL10N('core');
-		$this->lang = explode('_', $this->l->getLanguageCode())[0];
-		if (!in_array($this->lang, array('cs', 'en'))) {
-			$this->lang = 'en';
-		}
-	}
 
 	/**
 	 * Returns the base URL
@@ -66,7 +65,7 @@ class OC_Theme {
 	 * @return string URL
 	 */
 	public function getDocBaseUrl() {
-		return 'https://du.cesnet.cz/' . $this->lang . '/navody/owncloud/start#';
+		return 'https://doc.owncloud.org';
 	}
 
 	/**
@@ -90,7 +89,7 @@ class OC_Theme {
 	 * @return string title
 	 */
 	public function getHTMLName() {
-		return 'ownCloud@CESNET';
+		return 'ownCloud@<b>CESNET</b>';
 	}
 
 	/**
@@ -98,7 +97,8 @@ class OC_Theme {
 	 * @return string entity name
 	 */
 	public function getEntity() {
-		return $this->l->t('CESNET a. l. e.');
+		$l10n = $this->getL10n();
+		return $l10n->t('CESNET a. l. e.');
 	}
 
 	/**
@@ -106,7 +106,8 @@ class OC_Theme {
 	 * @return string slogan
 	 */
 	public function getSlogan() {
-		return $this->l->t("This service is a part of CESNET <a target=\"_blank\" href=\"http://www.cesnet.cz/services/?lang=en\">e-infrastructure</a>");
+		$l10n = $this->getL10n();
+		return $l10n->t("This service is a part of CESNET <a target=\"_blank\" href=\"http://www.cesnet.cz/services/?lang=en\">e-infrastructure</a>");
 	}
 
 	/**
@@ -114,7 +115,27 @@ class OC_Theme {
 	 * @return string logo claim
 	 */
 	public function getLogoClaim() {
-		return '';
+		return '<a href="' . $this->getBaseUrl() . '">DataCare</a>';
+	}
+
+	public function getPrivacyPolicyUrl() {
+		try {
+			return \OC::$server->getConfig()->getAppValue('core', 'legal.privacy_policy_url', '');
+		} catch (\Exception $e) {
+			return '';
+		}
+	}
+
+	public function getImprintUrl() {
+		try {
+			return \OC::$server->getConfig()->getAppValue('core', 'legal.imprint_url', '');
+		} catch (\Exception $e) {
+			return '';
+		}
+	}
+
+	public function getL10n() {
+		return \OC::$server->getL10N('core');
 	}
 
 	/**
@@ -122,9 +143,16 @@ class OC_Theme {
 	 * @return string short footer
 	 */
 	public function getShortFooter() {
-		$footer = '© 2018 <a href="'.$this->getBaseUrl().'" target="_blank">'.$this->getEntity().'</a>'.
-			'<br/><p class="info">' . $this->getSlogan() . '</p>';
+		$l10n = $this->getL10n();
+		$footer = '© '.date("Y").' <a href="'.$this->getBaseUrl().'" target="_blank\">'.$this->getEntity().'</a>'.
+			'<br/>' . $this->getSlogan();
+		if ($this->getImprintUrl() !== '') {
+			$footer .= '<span class="nowrap"> | <a href="' . $this->getImprintUrl() . '" target="_blank">' . $l10n->t('Imprint') . '</a></span>';
+		}
 
+		if ($this->getPrivacyPolicyUrl() !== '') {
+			$footer .= '<span class="nowrap"> | <a href="'. $this->getPrivacyPolicyUrl() .'" target="_blank">'. $l10n->t('Privacy Policy')	 .'</a></span>';
+		}
 		return $footer;
 	}
 
@@ -133,33 +161,21 @@ class OC_Theme {
 	 * @return string long footer
 	 */
 	public function getLongFooter() {
-		$cesnetLink = '© 2018 <a href="' . $this->getBaseUrl() . '" target="_blank\">' . $this->getEntity() . '</a><br>' . $this->getSlogan();
-		$footer = '</p><div class="footer-right">'
-		. '<p class="footer-links">'
-			. '<a target="_blank" href="https://www.cesnet.cz">CESNET</a>'
-			. '  ·  <a target="_blank" href="https://du.cesnet.cz">' . $this->l->t('DataCare') . '</a>'
-			. '  ·  <a target="_blank" href="'. $this->l->t('https://du.cesnet.cz/en/navody/owncloud/start') .'">' . $this->l->t('User Documentation') . '</a>'
-			. '  ·  <a target="_blank" href="'. $this->l->t('https://du.cesnet.cz/en/navody/faq/start#owncloud1') .'">FAQ</a>'
-			. '  ·  <a href="mailto:support@cesnet.cz">' . $this->l->t('Contact') . '</a>'
-		. '</div>'
-		. '<div class="footer-left">'
-			. '<p>' . $cesnetLink . '</p>'
-			. '</div></p>';
+		$l10n = $this->getL10n();
+		$footer = '© '.date("Y").' <a href="'.$this->getBaseUrl().'" target="_blank\">'.$this->getEntity().'</a>'.
+			'<br/>' . $this->getSlogan();
+		if ($this->getImprintUrl() !== '') {
+			$footer .= '<span class="nowrap"> | <a href="' . $this->getImprintUrl() . '" target="_blank">' . $l10n->t('Imprint') . '</a></span>';
+		}
+
+		if ($this->getPrivacyPolicyUrl() !== '') {
+			$footer .= '<span class="nowrap"> | <a href="'. $this->getPrivacyPolicyUrl() .'" target="_blank">'. $l10n->t('Privacy Policy') .'</a></span>';
+		}
 		return $footer;
 	}
 
 	public function buildDocLinkToKey($key) {
-		switch ($key) {
-			case 'user-sharing-federated' : {
-				if ($this->lang === 'cs') {
-					$key='sdileni_souboru';
-				} else {
-					$key='how_to_share_your_files';
-				}
-				break;
-			}
-		}
-		return $this->getDocBaseUrl() . $key;
+		return $this->getDocBaseUrl() . '/server/10.0/go.php?to=' . $key;
 	}
 
 	/**
