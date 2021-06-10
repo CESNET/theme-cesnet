@@ -5,7 +5,7 @@
 	<description>Custom theme for the ownCloud@CESNET server.</description>
 	<licence>AGPL</licence>
 	<author>Miroslav Bauer @ CESNET</author>
-	<version>2.0.0a21</version>
+	<version>2.0.0</version>
 	<types>
 		<theme/>
 	</types>
