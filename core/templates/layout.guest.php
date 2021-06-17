@@ -54,7 +54,7 @@ use OCP\IL10N; ?>
 	<?php print_unescaped($_['headers']); ?>
 </head>
 <body id="<?php p($_['bodyid']); ?>">
-<?php include('../core/templates/layout.noscript.warning.php'); ?>
+<?php include('theme-cesnet/core/templates/layout.noscript.warning.php'); ?>
 <section class="hero is-primary is-fullheight">
     <!-- Hero head: will stick at the top -->
     <div class="hero-head">
