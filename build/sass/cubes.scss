@@ -32,9 +32,11 @@ $base-matrix: matrix(0.9, 0.5, 0, 1, 0, 0);
   height: 100%;
   &.top {
     animation: $animation-duration top $easing infinite;
+    -webkit-animation: $animation-duration top $easing infinite;
   }
   &.bottom {
     animation: $animation-duration bottom $easing infinite;
+    -webkit-animation: $animation-duration bottom $easing infinite;
   }
 }
 
@@ -124,8 +126,30 @@ $radial-map: (
 @each $position, $points in $radial-map {
   .#{$position} {
     animation: $animation-duration $position $easing infinite;
+    -webkit-animation: $animation-duration $position $easing infinite;
   }
   @keyframes #{$position} {
+    0%,
+    83.33%,
+    100% {
+      transform: $base-matrix
+      translate(map-get($points, x1), map-get($points, y1));
+    }
+    16.66% {
+      transform: $base-matrix
+      translate(map-get($points, x2), map-get($points, y2));
+    }
+    33.33%,
+    50% {
+      transform: $base-matrix
+      translate(map-get($points, x3), map-get($points, y3));
+    }
+    66.66% {
+      transform: $base-matrix
+      translate(map-get($points, x4), map-get($points, y4));
+    }
+  }
+  @-webkit-keyframes #{$position} {
     0%,
     83.33%,
     100% {
@@ -189,7 +213,29 @@ $radial-map: (
     transform: translate(0, base(-2));
   }
 }
+@-webkit-keyframes top {
+  0%,
+  33.33%,
+  100% {
+    transform: translate(0, base(-1));
+  }
+  50%,
+  83.33% {
+    transform: translate(0, base(-2));
+  }
+}
 @keyframes bottom {
+  0%,
+  33.33%,
+  100% {
+    transform: translate(0, base(1));
+  }
+  50%,
+  83.33% {
+    transform: translate(0, base(2));
+  }
+}
+@-webkit-keyframes bottom {
   0%,
   33.33%,
   100% {

@@ -1,0 +1,80 @@
+<?php
+script('settings', 'panels/profile');
+vendor_script('strengthify/jquery.strengthify');
+vendor_style('strengthify/strengthify');
+if ($_['enableAvatars']) {
+	vendor_script('jcrop/js/jquery.Jcrop');
+	vendor_style('jcrop/css/jquery.Jcrop');
+}
+?>
+<?php if ($_['enableAvatars']): ?>
+	<form id="avatar" class="section" method="post" action="<?php p(\OC::$server->getURLGenerator()->linkToRoute('core.avatar.postAvatar')); ?>">
+		<h2 class="app-name"><?php p($l->t('Profile picture')); ?></h2>
+		<div id="displayavatar">
+			<div class="avatardiv"></div>
+			<div class="warning hidden"></div>
+			<?php if ($_['avatarChangeSupported']): ?>
+				<label for="uploadavatar" class="inlineblock button icon-upload" id="uploadavatarbutton" title="<?php p($l->t('Upload new')); ?>"></label>
+				<div class="inlineblock button icon-folder" id="selectavatar" title="<?php p($l->t('Select from Files')); ?>"></div>
+				<div class="hidden button icon-delete" id="removeavatar" title="<?php p($l->t('Remove image')); ?>"></div>
+				<input type="file" name="files[]" id="uploadavatar" class="hiddenuploadfield">
+				<p><em><?php p($l->t('png or jpg, max. 20 MB')); ?></em></p>
+			<?php else: ?>
+				<?php p($l->t('Picture provided by original account')); ?>
+			<?php endif; ?>
+		</div>
+
+		<div id="cropper" class="hidden">
+			<div class="inlineblock button" id="abortcropperbutton"><?php p($l->t('Cancel')); ?></div>
+			<div class="inlineblock button primary" id="sendcropperbutton"><?php p($l->t('Choose as profile picture')); ?></div>
+		</div>
+	</form>
+<?php endif; ?>
+
+	<div id="displaynameform" class="section">
+		<h2><?php echo $l->t('Full name'); ?></h2>
+		<span><?php if (isset($_['displayName'][0])) {
+				p($_['displayName']);
+			} else {
+				p($l->t('No display name set'));
+			} ?></span>
+	</div>
+
+	<div id="lostpassword" class="section">
+		<h2><?php echo $l->t('Email'); ?></h2>
+		<span><?php if (isset($_['email'][0])) {
+				p($_['email']);
+			} else {
+				p($l->t('No email address set'));
+			} ?></span>
+	</div>
+
+<div id="groups" class="section">
+	<h2><?php p($l->t('Groups')); ?></h2>
+	<?php if (\count($_['groups']) > 0) {
+		?>
+		<p><?php p($l->t('You are member of the following groups:')); ?></p>
+		<p>
+			<?php p(\implode(', ', $_['groups'])); ?>
+		</p>
+		<?php
+	} else {
+		?>
+		<p><?php p($l->t('You are not a member of any groups.')); ?></p>
+		<?php
+	} ?>
+
+</div>
+
+<form id="language" class="section">
+	<h2>
+		<label><?php p($l->t('Language'));?></label>
+	</h2>
+	<?php print_unescaped($_['languageSelector']); ?>
+	<?php if (OC_Util::getEditionString() === OC_Util::EDITION_COMMUNITY): ?>
+		<a href="https://www.transifex.com/projects/p/owncloud/"
+		   target="_blank" rel="noreferrer">
+			<em><?php p($l->t('Help translate'));?></em>
+		</a>
+	<?php endif; ?>
+</form>
