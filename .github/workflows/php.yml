@@ -18,7 +18,7 @@ jobs:
         working-directory: build
         run: npm run build-all
       - name: Build app distribution
-        run: tar -czvf theme-cesnet.tar.gz appinfo apps core *.php README.md LICENSE AUTHORS.md
+        run: tar -czvf theme-cesnet.tar.gz appinfo apps settings core *.php README.md LICENSE AUTHORS.md
       - name: Release app distribution assets
         if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags')
         uses: softprops/action-gh-release@v1
