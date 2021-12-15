@@ -78,11 +78,11 @@ script('core', [
                 </div>
                 <article class="message is-xsmall">
                     <div class="message-body">
-						<?php p($l->t('By logging in you agree with the ')); ?>
+						<?php p($l->t('By logging in, you confirm that you have been informed of the ')); ?>
                         <a target="_blank" href="<?php p($l->t('https://du.cesnet.cz/en/provozni_pravidla/start')); ?>" >
-							<?php p($l->t('terms of use')); ?>
+							<?php p($l->t('terms of service')); ?>
                         </a>
-						<?php print_unescaped($l->t(' and with the <a href="https://www.cesnet.cz/sdruzeni/ochrana-osobnich-udaju/" target="_blank">Privacy policy</a> for the service.')); ?>
+						<?php print_unescaped($l->t(' and of the information about the <a href="https://www.cesnet.cz/sdruzeni/ochrana-osobnich-udaju/" target="_blank">processing of personal data</a>.')); ?>
                     </div>
                 </article>
 
