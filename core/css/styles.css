@@ -115,6 +115,7 @@ button.primary:focus,
 
 .hero-body {
 	overflow: hidden;
+	flex-direction: column;
 }
 
 .message-body {
